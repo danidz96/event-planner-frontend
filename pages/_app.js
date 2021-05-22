@@ -1,10 +1,10 @@
-import '../styles/globals.css';
 import { ChakraProvider } from '@chakra-ui/react';
 import MainLayout from '../layouts/Main';
+import { theme } from '../styles/theme';
 
 function MyApp({ Component, pageProps }) {
   return (
-    <ChakraProvider resetCSS>
+    <ChakraProvider theme={theme}>
       <MainLayout>
         <Component {...pageProps} />
       </MainLayout>
