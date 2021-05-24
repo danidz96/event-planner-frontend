@@ -1,58 +1,49 @@
-import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import { Box, Text } from '@chakra-ui/layout';
+import { getSession } from 'next-auth/client';
 
-export default function Home() {
+export default function Home({ session }) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a href="https://github.com/vercel/next.js/tree/master/examples" className={styles.card}>
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/import?filter=next.js&utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>Instantly deploy your Next.js site to a public URL with Vercel.</p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+    <Box overflowY="auto">
+      <Text>{session?.user?.name}</Text>
+      <Text>
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ex cupiditate soluta, facilis dignissimos
+        consequuntur fugiat vel veritatis praesentium odit doloribus, quis iure quae, numquam corporis. Consequatur
+        atque perspiciatis fugit perferendis, delectus voluptates ipsum sint debitis sequi quidem quam, eos, ullam
+        praesentium minus dolorum. Quaerat voluptate corporis quis nostrum deserunt commodi, provident illum, incidunt
+        quos accusantium perspiciatis nulla sequi. Eius beatae, reiciendis doloribus deleniti reprehenderit iure sit.
+        Minus sed quidem laudantium iste saepe consequatur nulla sunt quis. Debitis, necessitatibus voluptatum sint
+        nostrum eligendi exercitationem possimus distinctio tenetur voluptate iste itaque incidunt explicabo inventore
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ex cupiditate soluta, facilis dignissimos
+        consequuntur fugiat vel veritatis praesentium odit doloribus, quis iure quae, numquam corporis. Consequatur
+        atque perspiciatis fugit perferendis, delectus voluptates ipsum sint debitis sequi quidem quam, eos, ullam
+        praesentium minus dolorum. Quaerat voluptate corporis quis nostrum deserunt commodi, provident illum, incidunt
+        quos accusantium perspiciatis nulla sequi. Eius beatae, reiciendis doloribus deleniti reprehenderit iure sit.
+        Minus sed quidem laudantium iste saepe consequatur nulla sunt quis. Debitis, necessitatibus voluptatum sint
+        nostrum eligendi exercitationem possimus distinctio tenetur voluptate iste itaque incidunt explicabo inventore
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ex cupiditate soluta, facilis dignissimos
+        consequuntur fugiat vel veritatis praesentium odit doloribus, quis iure quae, numquam corporis. Consequatur
+        atque perspiciatis fugit perferendis, delectus voluptates ipsum sint debitis sequi quidem quam, eos, ullam
+        praesentium minus dolorum. Quaerat voluptate corporis quis nostrum deserunt commodi, provident illum, incidunt
+        quos accusantium perspiciatis nulla sequi. Eius beatae, reiciendis doloribus deleniti reprehenderit iure sit.
+        Minus sed quidem laudantium iste saepe consequatur nulla sunt quis. Debitis, necessitatibus voluptatum sint
+        nostrum eligendi exercitationem possimus distinctio tenetur voluptate iste itaque incidunt explicabo inventore
+        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eaque ex cupiditate soluta, facilis dignissimos
+        consequuntur fugiat vel veritatis praesentium odit doloribus, quis iure quae, numquam corporis. Consequatur
+        atque perspiciatis fugit perferendis, delectus voluptates ipsum sint debitis sequi quidem quam, eos, ullam
+        praesentium minus dolorum. Quaerat voluptate corporis quis nostrum deserunt commodi, provident illum, incidunt
+        quos accusantium perspiciatis nulla sequi. Eius beatae, reiciendis doloribus deleniti reprehenderit iure sit.
+        Minus sed quidem laudantium iste saepe consequatur nulla sunt quis. Debitis, necessitatibus voluptatum sint
+        nostrum eligendi exercitationem possimus distinctio tenetur voluptate iste itaque incidunt explicabo inventore
+      </Text>
+    </Box>
   );
 }
+
+export const getServerSideProps = async ({ req }) => {
+  const session = await getSession({ req });
+  return {
+    props: {
+      session,
+    },
+  };
+};
