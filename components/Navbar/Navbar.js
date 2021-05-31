@@ -3,6 +3,7 @@ import { useSession } from 'next-auth/client';
 
 const Navbar = () => {
   const [session] = useSession();
+
   if (!session) {
     return null;
   }
