@@ -1,4 +1,4 @@
-import { ChakraProvider } from '@chakra-ui/react';
+import { Box, ChakraProvider } from '@chakra-ui/react';
 import { Provider } from 'next-auth/client';
 import Navbar from '../components/Navbar';
 import MainLayout from '../layouts/Main';
@@ -9,7 +9,9 @@ function MyApp({ Component, pageProps }) {
     <Provider session={pageProps.session}>
       <ChakraProvider theme={theme}>
         <MainLayout>
-          <Component {...pageProps} />
+          <Box overflowY="auto" w="100%" flexGrow={1}>
+            <Component {...pageProps} />
+          </Box>
           <Navbar />
         </MainLayout>
       </ChakraProvider>
