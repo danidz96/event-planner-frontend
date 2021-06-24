@@ -11,8 +11,8 @@ const NavLink = ({ children, href }) => (
       textAlign="center"
       _hover={{
         textDecoration: 'none',
-        bg: useColorModeValue('gray.200', 'gray.700'),
       }}
+      _focus={{ boxShadow: 'none' }}
     >
       {children}
     </Link>
