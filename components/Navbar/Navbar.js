@@ -1,5 +1,7 @@
-import { Box, HStack } from '@chakra-ui/layout';
+import { Flex, HStack, IconButton, Icon } from '@chakra-ui/react';
+import { HomeIcon, CalendarIcon, UserIcon } from '@heroicons/react/outline';
 import { useSession } from 'next-auth/client';
+import NavLink from './NavLink';
 
 const Navbar = () => {
   const [session] = useSession();
@@ -9,11 +11,21 @@ const Navbar = () => {
   }
 
   return (
-    <HStack w="100%">
-      <Box h="60px" w="100%">
-        Home
-      </Box>
-    </HStack>
+    <Flex w="full" borderTopWidth="1px" justify="center">
+      <HStack as="nav" h={14} w="90%" justify="space-between" alignItems="center">
+        <NavLink>
+          <Icon as={HomeIcon} w={6} h={6} color="gray.900" />
+        </NavLink>
+
+        <NavLink>
+          <Icon as={CalendarIcon} w={6} h={6} color="gray.900" />
+        </NavLink>
+
+        <NavLink>
+          <Icon as={UserIcon} w={6} h={6} color="gray.900" />
+        </NavLink>
+      </HStack>
+    </Flex>
   );
 };
 
