@@ -11,6 +11,7 @@
     "@chakra-ui/react": "^1.6.1",
     "@emotion/react": "^11.4.0",
     "@emotion/styled": "^11.3.0",
+    "@heroicons/react": "^1.0.1",
     "@hookform/resolvers": "^2.5.1",
     "framer-motion": "^4.1.17",
     "mongodb": "^3.6.6",
