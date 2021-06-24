@@ -1,5 +1,5 @@
 import NextLink from 'next/link';
-import { Link, useColorModeValue } from '@chakra-ui/react';
+import { Link } from '@chakra-ui/react';
 
 const NavLink = ({ children, href }) => (
   <NextLink href={href} passHref>
