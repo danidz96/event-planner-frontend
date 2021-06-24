@@ -13,16 +13,14 @@ const Navbar = () => {
   return (
     <Flex w="full" borderTopWidth="1px" justify="center">
       <HStack as="nav" h={14} w="90%" justify="space-between" alignItems="center">
-        <NavLink>
-          <Icon as={HomeIcon} w={6} h={6} color="gray.900" />
+        <NavLink href="/">
+          <Icon as={HomeIcon} w={6} h={6} color="gray.800" />
         </NavLink>
-
-        <NavLink>
-          <Icon as={CalendarIcon} w={6} h={6} color="gray.900" />
+        <NavLink href="/events">
+          <Icon as={CalendarIcon} w={6} h={6} color="gray.800" />
         </NavLink>
-
-        <NavLink>
-          <Icon as={UserIcon} w={6} h={6} color="gray.900" />
+        <NavLink href="/user">
+          <Icon as={UserIcon} w={6} h={6} color="gray.800" />
         </NavLink>
       </HStack>
     </Flex>
