@@ -31,7 +31,7 @@ const Navbar = () => {
     <Flex w="full" borderTopWidth="1px" justify="center">
       <HStack as="nav" h={14} w="90%" justify="space-between" alignItems="center">
         {NAVBAR_LINKS.map(({ href, icon }) => (
-          <NavLink href={href}>
+          <NavLink key={href} href={href}>
             <Icon as={icon} w={6} h={6} color={router.pathname === href ? 'teal.400' : 'gray.500'} />
           </NavLink>
         ))}
