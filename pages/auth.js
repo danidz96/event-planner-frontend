@@ -11,7 +11,7 @@ const AuthPage = ({ session }) => {
 
     return (
       <div>
-        <Link href="/api/auth/signin">
+        <Link href="/api/auth/signin" passHref>
           <button
             onClick={(e) => {
               e.preventDefault();
@@ -32,7 +32,7 @@ const AuthPage = ({ session }) => {
 
     return (
       <div>
-        <Link href="/api/auth/signout">
+        <Link href="/api/auth/signout" passHref>
           <button
             onClick={(e) => {
               e.preventDefault();
@@ -53,7 +53,7 @@ const AuthPage = ({ session }) => {
           {signOutButtonNode()}
           {signInButtonNode()}
         </div>
-        <div className="text">You aren't authorized to view this page</div>
+        <div className="text">You aren&apos;t authorized to view this page</div>
       </div>
     );
   }
