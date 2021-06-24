@@ -32,7 +32,7 @@ const Navbar = () => {
       <HStack as="nav" h={14} w="90%" justify="space-between" alignItems="center">
         {NAVBAR_LINKS.map(({ href, icon }) => (
           <NavLink href={href}>
-            <Icon as={icon} w={6} h={6} color={router.pathname === href ? 'teal.400' : 'gray.700'} />
+            <Icon as={icon} w={6} h={6} color={router.pathname === href ? 'teal.400' : 'gray.500'} />
           </NavLink>
         ))}
       </HStack>
