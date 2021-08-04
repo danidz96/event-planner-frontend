@@ -39,7 +39,7 @@ function EventForm() {
 
   return (
     <form onSubmit={handleSubmit(onSubmit)}>
-      <FormControl isInvalid={errors.name}>
+      <FormControl isInvalid={errors.title}>
         <FormLabel htmlFor="title">First name</FormLabel>
         <Input id="title" placeholder="title" {...register('title')} />
         <FormErrorMessage>{errors.title && errors.title.message}</FormErrorMessage>
